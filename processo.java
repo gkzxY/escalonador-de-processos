@@ -24,6 +24,23 @@ public class Processo{
 
         this.jaBloqueou = false;
     }
+    
+    public boolean precisaDisco() {
+        return this.recurso.equals("DISCO");
+    }
+    public String resumo() {
+        String r;
+
+        if (precisaDisco()) {
+            r = "|DISCO";
+        } else {
+            r = "";
+        }
+
+        return "P" + id + "[" + nome + "|pr=" + prioridade + "|cic=" + ciclos + r + "]";
+    }
+}
+
 
 
 
