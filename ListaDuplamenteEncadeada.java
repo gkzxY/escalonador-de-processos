@@ -23,4 +23,21 @@ public class ListaDuplamenteEncadeada{
         }
         size++;
   }
+    public Processo removeInicio() {
+        if (ini == null) {
+           return null;
+        }else{
+        No n = ini;
+        ini = n.prox;
+       
+        if (ini == null) { 
+           fim = null; 
+        }else{ 
+           ini.ant = null;
+        }
+        n.ant = n.prox = null;
+        size--;
+        return n.val;
+    }
+  }
 }
