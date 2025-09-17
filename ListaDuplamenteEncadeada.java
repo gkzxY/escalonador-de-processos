@@ -44,4 +44,16 @@ public class ListaDuplamenteEncadeada{
    public Processo olhaInicio() {
         return (ini == null) ? null : ini.val;
     }
+
+   public String toString() {
+        StringBuilder sb = new StringBuilder("[");
+        No c = ini;
+        while (c != null) {
+            sb.append(c.val.resumo());
+            c = c.prox;
+            if (c != null) sb.append(" -> ");
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 }
