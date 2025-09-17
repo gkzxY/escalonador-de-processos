@@ -40,4 +40,8 @@ public class ListaDuplamenteEncadeada{
         return n.val;
     }
   }
+
+   public Processo olhaInicio() {
+        return (ini == null) ? null : ini.val;
+    }
 }
