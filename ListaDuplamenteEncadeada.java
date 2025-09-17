@@ -7,4 +7,7 @@ public class ListaDuplamenteEncadeada{
     private No ini;
     private No fim;
     private int size;
+
+   public boolean vazia() { return size == 0; }
+   public int tamanho() { return size; }
 }
