@@ -37,7 +37,7 @@ public class Processo{
             r = "";
         }
 
-        return "P" + id + "[" + nome + "|pr=" + prioridade + "|cic=" + ciclos + r + "]";
+        return " P:" + id + "[" + nome + "|pr=" + prioridade + "|cic=" + ciclos + r + "]";
     }
 }
 
