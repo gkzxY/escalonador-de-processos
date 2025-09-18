@@ -59,5 +59,69 @@ public class Scheduler {
         return baixa.removeInicio();
     }
 
-    
+    public void executarCiclo() {
+        cabecalho();
+        desbloqueiaUmSeTiver();
+
+        Processo atual = pegaProximo();
+        if (atual == null) {
+            imprimeFilas();
+            System.out.println("CPU OCIOSA: nenhuma tarefa para executar.");
+            return;
+        }
+
+        if (atual.precisaDisco() && !atual.jaBloqueou) {
+            atual.jaBloqueou = true;
+            bloqueados.addFim(atual);
+            System.out.println("BLOQUEIO: " + atual.resumo() + " solicitou DISCO e foi bloqueado.");
+
+            Processo outro = pegaProximo();
+            if (outro != null) {
+                if (outro.precisaDisco() && !outro.jaBloqueou) {
+                    outro.jaBloqueou = true;
+                    bloqueados.addFim(outro);
+                    System.out.println("BLOQUEIO: " + outro.resumo() + " solicitou DISCO e foi bloqueado.");
+                    imprimeFilas();
+                    System.out.println("CPU OCIOSA após bloqueios.");
+                    return;
+                } else {
+                    System.out.println("EXECUTANDO: " + outro.resumo());
+                    outro.ciclos = outro.ciclos - 1;
+                    if (outro.ciclos <= 0) {
+                        System.out.println("TERMINOU : P" + outro.id + " (" + outro.nome + ")");
+                    } else {
+                        if (outro.prioridade == 1) alta.addFim(outro);
+                        else if (outro.prioridade == 2) media.addFim(outro);
+                        else baixa.addFim(outro);
+                        System.out.println("REINSERIDO: " + outro.resumo() + " no final da fila");
+                    }
+                    if (outro.prioridade == 1) contAltaSeguidas++;
+                    else contAltaSeguidas = 0;
+                    imprimeFilas();
+                    return;
+                }
+            } else {
+                imprimeFilas();
+                System.out.println("CPU OCIOSA após bloqueio.");
+                return;
+            }
+        }
+
+        System.out.println("EXECUTANDO: " + atual.resumo());
+        atual.ciclos = atual.ciclos - 1;
+
+        if (atual.ciclos <= 0) {
+            System.out.println("TERMINOU : P" + atual.id + " (" + atual.nome + ")");
+        } else {
+            if (atual.prioridade == 1) alta.addFim(atual);
+            else if (atual.prioridade == 2) media.addFim(atual);
+            else baixa.addFim(atual);
+            System.out.println("REINSERIDO: " + atual.resumo() + " no final da fila");
+        }
+
+        if (atual.prioridade == 1) contAltaSeguidas++;
+        else contAltaSeguidas = 0;
+
+        imprimeFilas();
+    }   
 }
