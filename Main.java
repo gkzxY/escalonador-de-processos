@@ -14,6 +14,7 @@ public class main{
         boolean primeira = true;
         while (sc.hasNextLine()) {
                 String linha = sc.nextLine().trim();
+                if (linha.isEmpty()) continue;
        
 
       
