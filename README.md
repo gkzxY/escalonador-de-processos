@@ -4,8 +4,7 @@ Dimmy Magalhões
 -----------------------------------
 Alunos integrantes:
 Gabriel Kauã Borges da Silva
-matrícula: 0030603
--
+matrícula: 0030603|
 Isael Canuto de Carvalho Neto 
 matrícula: 0030566
 -----------------------------------
