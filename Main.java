@@ -35,6 +35,13 @@ public class main{
                     System.err.println("Dados inválidos, linha ignorada: " + linha);
                     continue;
                 }
+          
+                Processo proc = new Processo(id, nome, prioridade, ciclos, recurso);
+                scheduler.adicionar(proc);
+            }
+            sc.close();
+
+                
 
           
           
