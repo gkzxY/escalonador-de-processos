@@ -8,11 +8,11 @@ matrícula:
 Isael Canuto de Carvalho Neto 
 matrícula: 0030566
 -----------------------------------
-Descrição do projeto
+# Descrição do projeto
 
 Nome: Escalonador de Processos (fila por prioridade com bloqueio de inanição)
 
-caracterização:
+# caracterização:
 
 mantém três filas de prontos (prioridade 1=Alta, 2=Média, 3=Baixa) e uma fila de bloqueados;
 escolhe o próximo processo para executar um ciclo por vez;
@@ -26,7 +26,7 @@ aplica uma anti‑inanição simples: se processos de Alta prioridade executarem
 imprime no console o que está acontecendo: desbloqueios, bloqueios, execuções, finalizações e o estado das filas;
 
 
-Componentes:
+# Componentes:
 
 1. Main.java
 
@@ -82,7 +82,7 @@ executarTudo(): roda ciclos até todas as filas ficarem vazias.
 executarCiclo(): unidade de simulação (desbloqueia um, escolhe próximo, executa, reencaminha/finaliza).
 
 
-Regras:
+# Regras:
 
 Bloqueio de DISCO na primeira vez que o processo é escalonado.
 
@@ -105,7 +105,7 @@ id,nome,prioridade,ciclos,recurso
 3,Musica,2,5,
 4,Backup,3,5,DISCO
 
-Campos:
+# Campos:
 
 id (inteiro > 0)
 
@@ -123,7 +123,7 @@ Linhas inválidas são avisadas em System.err e ignoradas (o programa não quebr
 
 ---
 
-Como compilar e executar:
+# Como compilar e executar:
 
 No terminal/cmd,java -version e javac -version devem responder.
 
