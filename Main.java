@@ -9,3 +9,5 @@ public class main{
     
         String caminho = args[0];
         Scheduler scheduler = new Scheduler();
+     try {
+        Scanner sc = new Scanner(new java.io.FileInputStream(caminho), "UTF-8");
