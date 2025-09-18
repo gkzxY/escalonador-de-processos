@@ -25,6 +25,12 @@ public class main{
                     System.err.println("Linha inválida ignorada: " + linha);
                     continue;
                 }
+                int id = parseIntSeguro(p[0], 0);
+                String nome = p[1].trim();
+                int prioridade = parseIntSeguro(p[2], 3);
+                int ciclos = parseIntSeguro(p[3], 1);
+                String recurso = (p.length >= 5) ? p[4].trim() : "";
+          
           
           
        
