@@ -34,4 +34,14 @@ public class Scheduler {
         System.out.println("Baixa : " + baixa);
         System.out.println("Bloq  : " + bloqueados);
     }
+
+    private void desbloqueiaUmSeTiver() {
+        Processo p = bloqueados.removeInicio();
+        if (p != null) {
+            if (p.prioridade == 1) alta.addFim(p);
+            else if (p.prioridade == 2) media.addFim(p);
+            else baixa.addFim(p);
+            System.out.println("DESBLOQUEIO: " + p.resumo() + " voltou para pr=" + p.prioridade);
+        }
+    }
 }
