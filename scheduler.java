@@ -16,4 +16,15 @@ public class Scheduler {
     public boolean terminou() {
         return alta.vazia() && media.vazia() && baixa.vazia() && bloqueados.vazia();
     }
+
+    public void executarTudo() {
+        while (!terminou()) executarCiclo();
+        System.out.println("=== FIM: todas as filas vazias e nenhum bloqueado ===");
+    }
+
+    private void cabecalho() {
+        ciclo++;
+        System.out.println("---------------------------------------------");
+        System.out.println("=== CICLO " + ciclo + " ===");
+    }
 }
