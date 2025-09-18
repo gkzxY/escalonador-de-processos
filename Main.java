@@ -20,8 +20,13 @@ public class main{
                     continue;
                    }
                 primeira = false;
-
                 String[] p = linha.split(",", -1);
+                if (p.length < 4) {
+                    System.err.println("Linha inválida ignorada: " + linha);
+                    continue;
+                }
+          
+          
        
 
       
