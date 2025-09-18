@@ -11,3 +11,4 @@ public class main{
         Scheduler scheduler = new Scheduler();
      try {
         Scanner sc = new Scanner(new java.io.FileInputStream(caminho), "UTF-8");
+        boolean primeira = true;
