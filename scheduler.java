@@ -27,4 +27,11 @@ public class Scheduler {
         System.out.println("---------------------------------------------");
         System.out.println("=== CICLO " + ciclo + " ===");
     }
+
+    private void imprimeFilas() {
+        System.out.println("Alta  : " + alta);
+        System.out.println("Média : " + media);
+        System.out.println("Baixa : " + baixa);
+        System.out.println("Bloq  : " + bloqueados);
+    }
 }
