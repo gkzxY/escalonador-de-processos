@@ -44,4 +44,20 @@ public class Scheduler {
             System.out.println("DESBLOQUEIO: " + p.resumo() + " voltou para pr=" + p.prioridade);
         }
     }
+
+    private Processo pegaProximo() {
+        if (contAltaSeguidas >= 5) {
+            Processo m = media.removeInicio();
+            if (m != null) return m;
+            Processo b = baixa.removeInicio();
+            if (b != null) return b;
+        }
+        Processo a = alta.removeInicio();
+        if (a != null) return a;
+        Processo m = media.removeInicio();
+        if (m != null) return m;
+        return baixa.removeInicio();
+    }
+
+    
 }
