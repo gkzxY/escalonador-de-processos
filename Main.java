@@ -40,6 +40,23 @@ public class main{
                 scheduler.adicionar(proc);
             }
             sc.close();
+          } catch (Exception e) {
+            System.err.println("Erro ao ler o arquivo: " + e.getMessage());
+            return;
+        }
+
+        scheduler.executarTudo();
+    }
+
+    private static int parseIntSeguro(String s, int padrao) {
+        try {
+            return Integer.parseInt(s.trim());
+        } catch (Exception e) {
+            return padrao;
+        }
+    }
+}
+
 
                 
 
