@@ -15,6 +15,9 @@ public class main{
         while (sc.hasNextLine()) {
                 String linha = sc.nextLine().trim();
                 if (linha.isEmpty()) continue;
+                if (primeira && linha.toLowerCase().startsWith("id")) {
+                    primeira = false;
+                    continue;
        
 
       
