@@ -6,4 +6,14 @@ public class Scheduler {
 
     private int ciclo = 0;
     private int contAltaSeguidas = 0;
+
+    public void adicionar(Processo p) {
+        if (p.prioridade == 1) alta.addFim(p);
+        else if (p.prioridade == 2) media.addFim(p);
+        else baixa.addFim(p);
+    }
+
+    public boolean terminou() {
+        return alta.vazia() && media.vazia() && baixa.vazia() && bloqueados.vazia();
+    }
 }
