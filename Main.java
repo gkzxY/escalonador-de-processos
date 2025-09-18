@@ -12,3 +12,8 @@ public class main{
      try {
         Scanner sc = new Scanner(new java.io.FileInputStream(caminho), "UTF-8");
         boolean primeira = true;
+        while (sc.hasNextLine()) {
+                String linha = sc.nextLine().trim();
+       
+
+      
