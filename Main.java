@@ -6,3 +6,6 @@ public class main{
             System.err.println("Uso: java Main <caminho-arquivo.txt|.csv>");
             return;
         }
+    
+        String caminho = args[0];
+        Scheduler scheduler = new Scheduler();
