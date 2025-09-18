@@ -13,6 +13,7 @@ Descrição do projeto
 Nome: Escalonador de Processos (fila por prioridade com bloqueio de inanição)
 
 caracterização:
+
 mantém três filas de prontos (prioridade 1=Alta, 2=Média, 3=Baixa) e uma fila de bloqueados;
 escolhe o próximo processo para executar um ciclo por vez;
 
