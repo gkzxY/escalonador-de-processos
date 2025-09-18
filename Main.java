@@ -18,6 +18,10 @@ public class main{
                 if (primeira && linha.toLowerCase().startsWith("id")) {
                     primeira = false;
                     continue;
+                   }
+                primeira = false;
+
+                String[] p = linha.split(",", -1);
        
 
       
