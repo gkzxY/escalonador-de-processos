@@ -30,9 +30,9 @@ public class Scheduler {
 
     private void imprimeFilas() {
         System.out.println("Alta  : " + alta);
-        System.out.println("Média : " + media);
+        System.out.println("Media : " + media);
         System.out.println("Baixa : " + baixa);
-        System.out.println("Bloq  : " + bloqueados);
+        System.out.println("Bloqueados  : " + bloqueados);
     }
 
     private void desbloqueiaUmSeTiver() {
