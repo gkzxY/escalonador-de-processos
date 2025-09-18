@@ -31,6 +31,12 @@ public class main{
                 int ciclos = parseIntSeguro(p[3], 1);
                 String recurso = (p.length >= 5) ? p[4].trim() : "";
           
+                if (id <= 0 || nome.isEmpty()) {
+                    System.err.println("Dados inválidos, linha ignorada: " + linha);
+                    continue;
+                }
+
+          
           
           
        
